@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE VANGUARD | Luxury Resale Collective</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: #1a1a1a;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+      .logo-box {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.9);
+            width: 100px;
+            height: 100px;
+            padding: 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 30px;
+            right: 5%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            z-index: 2000;
+        }
+
+        nav a {
+            color: #1a1a1a;
+            margin: 0 1rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* Aside Styles */
+        aside {
+            position: fixed;
+            left: 0;
+            top: 30%;
+            background: #1a1a1a;
+            padding: 2rem;
+            transform: translateX(-75%);
+            transition: transform 0.3s ease;
+            border-radius: 0 10px 10px 0;
+        }
+
+        aside:hover {
+            transform: translateX(0);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.5rem;
+            background: #333;
+            border: none;
+            color: #fff;
+        }
+
+        /* Main Content Styles */
+        main {
+            margin: 4rem 5%;
+        }
+
+        .hero-section {
+            background: url('bg.jpg') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .hero-text {
+            color: #fff;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Products Grid */
+        .product-section {
+            display: none;
+            height: 100vh;
+            padding: 100px 5% 5%;
+            position: relative;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .product-section.active {
+            display: block;
+        }
+
+        .product-info {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 4rem 5%;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-box">
+        <img src="logo.jpg" alt="LUXE VANGUARD" class="logo">
+    </div>
+
+    <nav>
+        <a class="nav-link" data-target="new-arrivals">Hoodies</a>
+        <a class="nav-link" data-target="designers">Sweaters</a>
+        <a class="nav-link" data-target="archive">Shirts</a>
+        <a class="nav-link" data-target="about">Pants</a>
+        <a class="nav-link" data-target="contact">Hats</a>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>CURATED LUXURY</h1>
+            <p>Reshaping Contemporary Vintage</p>
+        </div>
+    </section>
+
+    <!-- Product Sections -->
+    <section id="new-arrivals" class="product-section" style="background-image: url('1.jpg')">
+        <div class="product-info">
+            <h2>Chrome Hearts Hoodie</h2>
+            <p class="price">$5000</p>
+            <p class="description">Chrome Hearts Hoodie </p>
+        </div>
+    </section>
+
+    <section id="designers" class="product-section" style="background-image: url('2.jpg')">
+        <div class="product-info">
+            <h2>Chrome Hearts Sweater</h2>
+            <p class="price">$5000</p>
+            <p class="description">chrome hearts sweater</p>
+        </div>
+    </section>
+
+    <section id="archive" class="product-section" style="background-image: url('3.jpg')">
+        <div class="product-info">
+            <h2>Chrome Hearts Shirt</h2>
+            <p class="price">$5000</p>
+            <p class="description">chrome hearts shirt</p>
+        </div>
+    </section>
+    
+        <section id="about" class="product-section" style="background-image: url('4.jpg')">
+        <div class="product-info">
+            <h2>Chrome Hearts Pants</h2>
+            <p class="price">$5000</p>
+            <p class="description">chrome hearts pants</p>
+        </div>
+    </section>
+    
+        <section id="contact" class="product-section" style="background-image: url('5.jpg')">
+        <div class="product-info">
+            <h2>Chrome Hearts Hatsts</h2>
+            <p class="price">$5000</p>
+            <p class="description">chrome hearts hats</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Im John Kevin Docejo Running the company on my own as a reseller </p>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <p>Shipping & Returns</p>
+                <p>Authentication</p>
+                <p>Contact</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">chrometrip@gmail.com</a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2023 Chrome Trip. All rights reserved.</p>
+    </footer>
+    
+<script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = e.target.dataset.target;
+                document.querySelectorAll('.product-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+                window.scrollTo(0, 0);
+            });
+        });
+
+        // Initialize first product section as active
+        document.querySelector('.product-section').classList.add('active');
+    </script>
+    
+</body>
+</html>
